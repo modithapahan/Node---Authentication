@@ -55,9 +55,12 @@ router.route('/login').post(async (req,res) => {
         return res.status(200).send("Invalid Password!")
     }
 
+    res.send('Logged in!');
+
     // creating a token
 
     
+
 })
 
 
