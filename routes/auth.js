@@ -55,11 +55,9 @@ router.route('/login').post(async (req,res) => {
         return res.status(200).send("Invalid Password!")
     }
 
-    res.send('Logged in!');
+    const token = JWT.sign({_id: user._id}, process.env.TOKEN_SECRET);
+    res.header('auth-token', token).send(token);
 
-    // creating a token
-
-    
 
 })
 
